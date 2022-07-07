@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fileShare || Download File</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <img src="/img/logo.png" alt="fileShare logo" class="logo">
+
+    <section class="download">
+        <img src="/img/download icon.png" alt="Download Icon" class="download_icon">
+        
+        <% if(locals.error){ %>
+            <h4><%= locals.error %></h4>
+        <% } else{ %>
+            <h2>Your file is ready to download</h2>
+            <p><i>This link will expire in 24 hours</i></p>
+
+            <div class="file_info">
+                <h4><%= file_name %></h4>
+                <p><i><%= parseFloat(file_size/1e6).toFixed(2) %> MB</i></p>
+            </div>
+        
+            <div class="btn-container">
+                <a href="<%= file_download %>">Download File</a>
+            </div>
+        <% } %>
+    </section>
+</body>
+</html>
