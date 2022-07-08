@@ -36,3 +36,5 @@ async function deleteData() {
 }
 
 deleteData().then(process.exit);
+
+// Run this script in Heroku Scheduler using "node delete_data_script.js"
